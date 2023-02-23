@@ -48,7 +48,18 @@ An automation script [runPostInstallUninstallTasks](./scripts/runPostInstallUnin
 cd ios && pod install
 ```
 
+4. Create ENV files
+
+Hit the following commands in the terminal to create the .env files for the respective environment. `.env.staging` and `.env.production` are added into the `.gitignore` file and will not be pushed to the version control system.
+
+```
+echo ENV_TYPE=staging > .env.staging
+echo ENV_TYPE=production > .env.production
+```
+
 4. Running the app
+
+This app is configured for the custom staging and production environments. So, the standard `npm run android` or `npm run ios` commands will not work on this project.
 - **To run Android Staging Debug:** `yarn androidStagingDebug` or `npm run androidStagingDebug`
 - **To run iOS Staging Debug:** `yarn iosStagingDebug` or `npm run iosStagingDebug`
 - **To run Android Production Debug:** `yarn androidStagingDebug` or `npm run androidProductionDebug`

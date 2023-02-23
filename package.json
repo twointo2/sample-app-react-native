@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "android": "echo 'Please use androidStagingDebug or androidProductionDebug scripts instead.'",
+    "ios": "echo 'Please use iosStagingDebug or iosProductionDebug scripts instead.'",
     "androidStagingDebug": "react-native run-android --variant=stagingDebug",
     "androidProductionDebug": "react-native run-android --variant=productionDebug",
     "iosStagingDebug": "react-native run-ios --scheme 'STAGING'",
