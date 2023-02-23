@@ -1,0 +1,66 @@
+{
+  "name": "sampleapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "androidStagingDebug": "react-native run-android --variant=stagingDebug",
+    "androidProductionDebug": "react-native run-android --variant=productionDebug",
+    "iosStagingDebug": "react-native run-ios --scheme 'STAGING'",
+    "iosProductionDebug": "react-native run-ios --scheme 'PRODUCTION'",
+    "start": "react-native start",
+    "test": "jest",
+    "test:watch": "npx cross-env NODE_ENV=test jest --watchAll",
+    "lint": "eslint .",
+    "postinstall": "node ./scripts/runPostInstallUninstallTasks.js",
+    "uninstall": "node ./scripts/runPostInstallUninstallTasks.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.9",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/stack": "^6.2.2",
+    "axios": "^0.27.2",
+    "react": "18.0.0",
+    "react-native": "0.69.4",
+    "react-native-bootsplash": "^4.3.2",
+    "react-native-config": "^1.4.6",
+    "react-native-flash-message": "^0.3.1",
+    "react-native-gesture-handler": "^2.5.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-localization": "^2.3.1",
+    "react-native-safe-area-context": "^4.3.3",
+    "react-native-screens": "^3.16.0",
+    "react-native-size-matters": "^0.4.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^28.1.7",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
+    "metro-react-native-babel-preset": "^0.70.3",
+    "react-test-renderer": "18.0.0",
+    "husky": "^8.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "verbose": true,
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|@react-native|react-router-native|react-native-[a-z-]+|@react-native-[a-z-]+|)/)"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js"
+    },
+    "setupFiles": [
+      "./tests/setup.js",
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ]
+  }
+}
