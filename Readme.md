@@ -57,7 +57,7 @@ echo ENV_TYPE=staging > .env.staging
 echo ENV_TYPE=production > .env.production
 ```
 
-4. Running the app
+## Running the app
 
 This app is configured for the custom staging and production environments. So, the standard `npm run android` or `npm run ios` commands will not work on this project.
 - **To run Android Staging Debug:** `yarn androidStagingDebug` or `npm run androidStagingDebug`
